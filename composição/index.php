@@ -1,0 +1,26 @@
+<?php 
+    class pessoa{
+        public function AtribuiNome($nome){
+            return "O nome da pessoa é " . $nome;
+        }
+    }
+
+    class Exibe{
+        public $pessoa;
+        public $nome;
+
+        function __construct($nome)
+        {
+            $this->pessoa = new pessoa();
+            $this->nome = $nome;
+        }
+
+        public function exibeNome(){
+            echo $this->pessoa->atribuiNome($this->nome);
+        }
+    }
+
+    $exibe = new exibe("Jõao");
+    $exibe->exibeNome();
+
+?>
